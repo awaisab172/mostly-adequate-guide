@@ -4,7 +4,8 @@
   "description": "The Mostly Adequate Guide to Functional Programming",
   "dependencies": {
     "gitbook-plugin-include-codeblock": "^3.2.2",
-    "gitbook-plugin-exercises": "MostlyAdequate/plugin-exercises"
+    "gitbook-plugin-exercises": "MostlyAdequate/plugin-exercises",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "gitbook-cli": "^2.3.2"
@@ -14,7 +15,9 @@
     "start": "$(npm bin)/gitbook serve",
     "generate-summary": "perl -n .generate-summary.pl ch*.md appendix_*.md > SUMMARY.md",
     "generate-epub": "gitbook epub",
-    "generate-pdf": "gitbook pdf"
+    "generate-pdf": "gitbook pdf",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -31,5 +34,6 @@
   "bugs": {
     "url": "https://github.com/christiantakle/mostly-adequate-guide/issues"
   },
-  "homepage": "https://github.com/christiantakle/mostly-adequate-guide#readme"
+  "homepage": "https://github.com/christiantakle/mostly-adequate-guide#readme",
+  "snyk": true
 }
